@@ -1,4 +1,4 @@
-<section class="{{ styles.container }}">
+<form class="{{ styles.container }}">
     <div>
         {{{ email }}}
         {{{ login }}}
@@ -11,7 +11,7 @@
 
     {{#if isEdit}}
         <div>
-            <button class="{{ styles.save_button }}">Save</button>
+            <button class="{{ styles.save_button }}" type="submit" disabled>Save</button>
         </div>
     {{else}}
         <div class="{{ styles.buttons_container}}">
@@ -33,4 +33,4 @@
             </button>
         </div>
     {{/if}}
-</section>
+</form>
