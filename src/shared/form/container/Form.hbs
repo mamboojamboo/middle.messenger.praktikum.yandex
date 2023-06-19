@@ -1,0 +1,14 @@
+<form class="{{ styles.form }}" onsubmit="event.preventDefault()">
+	<h1 class="{{ styles.form__title }}">{{ title }}</h2>
+
+	<div class="{{ styles.form__inputs }}">
+		{{#each children }}
+			{{{ this }}}
+		{{/each}}
+	</div>
+
+	<div class="{{ styles.form__buttons }}">
+		{{{ SubmitButton }}}
+		{{{ RouteButton }}}
+	</div>
+</form>

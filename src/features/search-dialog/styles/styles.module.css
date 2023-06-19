@@ -1,0 +1,25 @@
+.search {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border-radius: 0.75rem;
+	background-color: var(--whiteColor);
+}
+
+.search::before {
+	position: absolute;
+	left: 0.75rem;
+	content: url('../../../../static/assets/icons/SearchIcon.svg');
+	width: 20.3px;
+	height: 20.33px;
+	z-index: 1;
+}
+
+.search__input {
+	display: flex;
+	width: 100%;
+	margin-left: 1.75rem;
+	padding: 1rem 0.75rem;
+	border-radius: 0.75rem;
+	border: none;
+}

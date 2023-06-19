@@ -1,0 +1,14 @@
+.chat__page {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.chat__main {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	width: 80vw;
+	height: 100vh;
+	padding: 3rem 1.5rem;
+}

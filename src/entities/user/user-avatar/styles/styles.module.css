@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.avatar {
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 50%;
+    background-color: var(--greyColor);
+}
+
+.name {
+    padding-top: 2rem;
+    font-weight: 600;
+    font-size: var(--textSizeM);
+    line-height: var(--textSizeM);
+}
