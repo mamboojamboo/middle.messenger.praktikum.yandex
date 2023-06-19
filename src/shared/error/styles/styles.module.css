@@ -1,0 +1,31 @@
+@import '../../../app/app-container/styles/variables.css';
+
+.error {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	color: var(--greyColor);
+}
+
+.error__code {
+	font-size: var(--textSizeXL);
+}
+
+.error__description {
+	font-size: var(--textSizeX);
+	font-variant: small-caps;
+}
+
+.error__button {
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.75rem;
+	border: none;
+	color: var(--whiteColor);
+	background-color: var(--blueColor);
+	font-size: var(--textSizeM);
+	cursor: pointer;
+}

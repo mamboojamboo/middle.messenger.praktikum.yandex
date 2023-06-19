@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 0.063rem solid var(--greyColor);
+}
+
+.text__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title {
+    font-weight: 600;
+    font-size: var(--textSizeM);
+    line-height: var(--textSizeX);
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: var(--textSizeXS);
+    line-height: var(--textSizeXS);
+    color: var(--lightGreenColor);
+}
+
+.buttons__wrapper {
+    display: flex;
+    gap: 0.75rem;
+}

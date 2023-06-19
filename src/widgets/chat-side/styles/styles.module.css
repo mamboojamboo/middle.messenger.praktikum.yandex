@@ -1,0 +1,31 @@
+.side {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: 20vw;
+	height: 100vh;
+	padding: 3rem 1.5rem 0;
+	background-color: var(--blueColor);
+}
+
+.side__title {
+	font-size: 2rem;
+	line-height: 2rem;
+	font-weight: 600;
+	text-align: left;
+	font-variant: all-small-caps;
+	color: var(--pinkColor);
+}
+
+.side__usercard {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.side__chatlist {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	overflow: auto;
+}

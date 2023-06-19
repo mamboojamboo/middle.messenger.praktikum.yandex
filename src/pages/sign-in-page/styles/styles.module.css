@@ -1,0 +1,40 @@
+.signin {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--snowColor);
+}
+
+.signin__submit {
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.75rem;
+	font-size: var(--textSizeM);
+	border: none;
+	font-variant: small-caps;
+	cursor: pointer;
+	box-shadow: 0 0.25rem var(--greyColor);
+	color: var(--blueColor);
+}
+
+.signin_submit:hover {
+	background-color: var(--lightGreenColor);
+}
+
+.signin__submit:active {
+	background-color: var(--lightGreenColor);
+	box-shadow: 0 0 var(--greyColor);
+	transform: translateY(0.25rem);
+}
+
+.signin__signup {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.signin__signup:hover {
+	color: var(--pinkColor);
+	text-decoration: underline;
+}
