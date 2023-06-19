@@ -1,0 +1,7 @@
+export const APP_ROUTES = {
+	SIGN_IN: 'SIGN_IN',
+	SIGN_UP: 'SIGN_UP',
+	CHAT: 'CHAT',
+	NOT_FOUND: 'NOT_FOUND',
+	SERVER_ERROR: 'SERVER_ERROR'
+};

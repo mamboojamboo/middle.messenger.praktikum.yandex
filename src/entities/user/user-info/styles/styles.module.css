@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+
+.buttons_container {
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.save_button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: var(--textSizeS);
+    line-height: var(--textSizeS);
+    background: var(--pinkColor);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.25rem var(--greyColor);
+    color: var(--whiteColor);
+}
+
+.button {
+    display: flex;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    color: var(--pinkColor);
+    cursor: pointer;
+}

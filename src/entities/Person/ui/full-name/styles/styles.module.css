@@ -1,0 +1,4 @@
+.fullname {
+	font-size: var(--textSizeS);
+	color: var(--whiteColor);
+}

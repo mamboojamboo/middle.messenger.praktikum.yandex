@@ -1,0 +1,9 @@
+.add__button {
+	display: flex;
+	width: 1.5rem;
+	height: 1.5rem;
+	cursor: pointer;
+	background: url(../../../../static/assets/icons/AddUserToChat.svg);
+	background-repeat: no-repeat;
+	border: none;
+}

@@ -1,0 +1,36 @@
+<form class="{{ styles.container }}">
+    <div>
+        {{{ email }}}
+        {{{ login }}}
+        {{{ firstName }}}
+        {{{ lastName }}}
+        {{{ nickName }}}
+        {{{ phone }}}
+        {{{ avatar }}}
+    </div>
+
+    {{#if isEdit}}
+        <div>
+            <button class="{{ styles.save_button }}" type="submit" disabled>Save</button>
+        </div>
+    {{else}}
+        <div class="{{ styles.buttons_container}}">
+            <button
+                id="change-data"
+                class="{{ styles.button }}"
+                type="button"
+                data-main="CHANGE_DATA"
+            >
+                Change personal data
+            </button>
+            <button
+                id="change-password"
+                class="{{ styles.button }}"
+                type="button"
+                data-main="CHANGE_PASSWORD"
+            >
+                Change password
+            </button>
+        </div>
+    {{/if}}
+</form>

@@ -1,0 +1,31 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: var(--blueColor);
+	padding: 3rem 4.875rem;
+	min-width: 30rem;
+	gap: 3rem;
+	border: none;
+	border-radius: 0.75rem;
+	background-color: var(--whiteColor);
+}
+
+.form__title {
+	text-align: center;
+	font-variant: small-caps;
+}
+
+.form__inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+	font-size: var(--textSizeM);
+}
+
+.form__buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
