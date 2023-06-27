@@ -1,7 +1,7 @@
-<form class="{{ styles.container }}">
-    <input class="{{ styles.input }}" name="message" type="text" placeholder="Type your message..." required/>
-    <div class="{{ styles.buttons_wrapper }}">
+<form class="{{ styles.send-message }}">
+    <input class="{{ styles.send-message__input }}" name="message" type="text" placeholder="Type your message..." required/>
+    <div class="{{ styles.send-message__buttons }}">
         {{{ AttachFilesToMessage }}}
-        <button class="{{ styles.submit_button }}" type="submit" disabled>Send</button>
+        <button class="{{ styles.send-message__submit }}" type="submit" disabled>Send</button>
     </div>
 </section>

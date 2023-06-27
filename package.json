@@ -4,16 +4,27 @@
   "description": "Distributed community chat",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev": "vite --open --port=3000",
-    "build": "vite build",
-    "start": "vite build && node server.js"
+    "dev": "tsc --noEmit --watch",
+    "build": "tsc --noEmit",
+    "start": "vite build && node server.js",
+    "lint": "eslint \"./src/**/*.{js,ts}\" --fix",
+    "style": "stylelint \"**/*.css\"",
+    "test": "stylelint ./src/features/send-message/**/*.css"
   },
   "engines": {
     "node": ">= 12.0.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
     "handlebars": "^4.7.7",
     "postcss-nesting": "^11.3.0",
+    "stylelint": "^15.9.0",
+    "stylelint-config-standard": "^33.0.0",
     "vite": "^4.3.9"
   },
   "dependencies": {
