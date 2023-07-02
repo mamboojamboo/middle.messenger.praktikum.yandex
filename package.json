@@ -7,7 +7,7 @@
     "dev": "vite --open --port=3000",
     "build": "vite build",
     "start": "vite build && node server.js",
-    "tsc":  "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "style": "stylelint \"**/*.css\"",
     "lint": "eslint \"./src/**/*.{js,ts}\" --fix",
     "test": "npm run lint && npm run style && npm run tsc"
@@ -26,6 +26,7 @@
     "postcss-nesting": "^11.3.0",
     "stylelint": "^15.9.0",
     "stylelint-config-standard": "^33.0.0",
+    "typescript": "^5.1.6",
     "vite": "^4.3.9"
   },
   "dependencies": {
