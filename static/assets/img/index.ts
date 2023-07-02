@@ -11,15 +11,15 @@ import SpaceMonkeyAvatar from './SpaceMonkeyAvatar.png';
 import JackAvatar from './JackAvatar.png';
 
 export {
-    userAvatar,
-    MarlaAvatar,
-    RobertAvatar,
-    RaymondAvatar,
-    RichardAvatar,
-    IrvinAvatar,
-    AngelFaceAvatar,
-    BusDriverAvatar,
-    MechanicAvatar,
-    SpaceMonkeyAvatar,
-    JackAvatar
+  userAvatar,
+  MarlaAvatar,
+  RobertAvatar,
+  RaymondAvatar,
+  RichardAvatar,
+  IrvinAvatar,
+  AngelFaceAvatar,
+  BusDriverAvatar,
+  MechanicAvatar,
+  SpaceMonkeyAvatar,
+  JackAvatar,
 };

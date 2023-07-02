@@ -10,7 +10,8 @@
     "tsc": "tsc --noEmit",
     "style": "stylelint \"**/*.css\"",
     "lint": "eslint \"./src/**/*.{js,ts}\" --fix",
-    "test": "npm run lint && npm run style && npm run tsc"
+    "test": "npm run lint && npm run style && npm run tsc",
+    "fix": "eslint \"./server.js\" --fix"
   },
   "engines": {
     "node": ">= 12.0.0"
