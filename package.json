@@ -4,12 +4,13 @@
   "description": "Distributed community chat",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "dev": "tsc --noEmit --watch",
-    "build": "tsc --noEmit",
+    "dev": "vite --open --port=3000",
+    "build": "vite build",
     "start": "vite build && node server.js",
-    "lint": "eslint \"./src/**/*.{js,ts}\" --fix",
+    "tsc":  "tsc --noEmit",
     "style": "stylelint \"**/*.css\"",
-    "test": "stylelint ./src/features/send-message/**/*.css"
+    "lint": "eslint \"./src/**/*.{js,ts}\" --fix",
+    "test": "npm run lint && npm run style && npm run tsc"
   },
   "engines": {
     "node": ">= 12.0.0"

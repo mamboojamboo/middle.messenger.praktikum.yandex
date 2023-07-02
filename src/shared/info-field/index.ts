@@ -1,3 +1,4 @@
+import { Block } from '../utils';
 import template from './container/InfoField.hbs';
 import styles from './styles/styles.module.css';
 
@@ -6,10 +7,17 @@ type TInfoFieldProps = {
   name: string;
   value: string;
   isEdit: boolean;
+  attr?: {
+    class?: string;
+  }
 }
 
-export const InfoField = ({
-  title, name, value, isEdit,
-}: TInfoFieldProps) => template({
-  styles, title, name, value, isEdit,
-});
+export class InfoField extends Block<TInfoFieldProps> {
+  constructor(props: TInfoFieldProps) {
+    super('div', { ...props, attr: { class: styles.container } });
+  }
+
+  render() {
+    return this.compile(template, { ...this.props, styles });
+  }
+}

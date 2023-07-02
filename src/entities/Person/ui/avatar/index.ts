@@ -1,14 +1,18 @@
+import { Block } from 'shared';
 import template from './container/Avatar.hbs';
 import styles from './styles/styles.module.css';
 
 type TAvatarProps = {
   url: string;
-  firstName: string;
-  secondName: string;
+  alt: string;
 }
 
-export const Avatar = ({ url, firstName, secondName }: TAvatarProps) => template({
-  styles,
-  url,
-  alt: `This is personal avatar of ${firstName} ${secondName}`,
-});
+export class Avatar extends Block<TAvatarProps> {
+  constructor(props: TAvatarProps) {
+    super('div', props);
+  }
+
+  render() {
+    return this.compile(template, { ...this.props, styles });
+  }
+}

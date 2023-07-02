@@ -9,11 +9,11 @@ import { Router } from 'shared';
 import { APP_ROUTES } from './constants';
 
 const routes = {
-  SIGN_IN: SignInPage,
-  SIGN_UP: SignUpPage,
-  CHAT: ChatPage,
-  NOT_FOUND: NotFoundPage,
-  SERVER_ERROR: ServerErrorPage,
+  SIGN_IN: new SignInPage(),
+  SIGN_UP: new SignUpPage(),
+  CHAT: new ChatPage(),
+  NOT_FOUND: new NotFoundPage(),
+  SERVER_ERROR: new ServerErrorPage(),
 };
 
 const AppRouter = new Router(routes);

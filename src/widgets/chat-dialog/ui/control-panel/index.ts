@@ -4,16 +4,27 @@ import {
   DeleteChatButton,
   GoToPreviousChatMain,
 } from 'features';
+import { Block } from 'shared';
 import template from './container/ControlPanel.hbs';
 import styles from './styles/styles.module.css';
 
-export const ControlPanel = () => {
-  const buttons = [
-    AddUserToChatButton,
-    DeleteUserButton,
-    DeleteChatButton,
-    GoToPreviousChatMain,
-  ];
+const buttons = [
+  new AddUserToChatButton(),
+  new DeleteUserButton(),
+  new DeleteChatButton(),
+  new GoToPreviousChatMain(),
+];
 
-  return template({ styles, buttons });
-};
+export class ControlPanel extends Block {
+  constructor() {
+    super('div', { attr: { class: styles['control-panel'] } });
+  }
+
+  init() {
+    this.children.buttons = buttons;
+  }
+
+  render() {
+    return this.compile(template, { styles });
+  }
+}

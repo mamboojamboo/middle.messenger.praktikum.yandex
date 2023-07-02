@@ -15,6 +15,7 @@ export const INTL = {
   SUBMIT_BUTTON: {
     LABEL: 'Sign in',
     TYPE: 'submit',
+    HANDLESUBMIT_TITLE: 'SignIn Form: ',
   },
   ROUTE_BUTTON: {
     LABEL: 'Sign up',

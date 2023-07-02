@@ -6,4 +6,6 @@ export { Form } from './form';
 export { TopPanel } from './top-panel';
 export { InfoField } from './info-field';
 
-export { Router } from './utils';
+export { Router, Block } from './utils';
+
+export { handleSubmit } from './events';

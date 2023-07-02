@@ -1,19 +1,25 @@
+import { Block } from '../utils/block';
 import template from './container/Form.hbs';
 import styles from './styles/styles.module.css';
 
 type TFormProps = {
   title: string;
-  children: string[];
-  SubmitButton: string;
-  RouteButton: string;
+  styles?: string;
+  children: Block[];
+  SubmitButton: Block;
+  RouteButton: Block;
 }
 
-export const Form = ({
-  title, children, SubmitButton, RouteButton,
-}: TFormProps) => template({
-  styles,
-  title,
-  children,
-  SubmitButton,
-  RouteButton,
-});
+export class Form extends Block<TFormProps> {
+  constructor(props: TFormProps) {
+    super('div', { ...props, styles });
+  }
+
+  init() {
+    this.children.children = this.props.children;
+  }
+
+  render() {
+    return this.compile(template, this.props);
+  }
+}

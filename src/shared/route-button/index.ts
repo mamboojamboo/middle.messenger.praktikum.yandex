@@ -1,14 +1,24 @@
+import { Block } from '../utils/block';
 import template from './container/RouteButton.hbs';
 
 type TRouteButton = {
-  className: string;
-  type: string;
+  attr: {
+    class: string;
+    type: string;
+    'data-route': string;
+  }
   label: string;
-  route: string;
+  events?: {
+    click?: (event: MouseEvent) => void
+  }
 }
 
-export const RouteButton = ({
-  className, type, label, route,
-}: TRouteButton) => template({
-  className, type, label, route,
-});
+export class RouteButton extends Block<TRouteButton> {
+  constructor(props: TRouteButton) {
+    super('button', props);
+  }
+
+  render() {
+    return this.compile(template, this.props);
+  }
+}

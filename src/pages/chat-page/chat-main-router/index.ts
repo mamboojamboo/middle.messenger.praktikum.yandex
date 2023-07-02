@@ -9,11 +9,11 @@ import { Router } from 'shared';
 import { CHAT_MAIN_ROUTES } from './constants';
 
 const routes = {
-  EMPTY: ChatMainEmpty,
-  PROFILE: UserProfile,
-  DIALOG: ChatDialog,
-  CHANGE_DATA: UserChangeData,
-  CHANGE_PASSWORD: UserChangePassword,
+  EMPTY: new ChatMainEmpty(),
+  PROFILE: new UserProfile(),
+  DIALOG: new ChatDialog(),
+  CHANGE_DATA: new UserChangeData(),
+  CHANGE_PASSWORD: new UserChangePassword(),
 };
 
 const ChatMainRouter = new Router(routes);

@@ -1,13 +1,14 @@
+import { Block } from './block';
 import { Stack } from './stack';
 
 export class Router {
   #history = new Stack();
 
-  #routes: Record<string, () => string> = {};
+  #routes: Record<string, Block> = {};
 
-  #currentPage: null | (() => string) = null;
+  #currentPage: null | Block = null;
 
-  constructor(routes: Record<string, () => string>) {
+  constructor(routes: Record<string, Block>) {
     this.#routes = { ...routes };
   }
 

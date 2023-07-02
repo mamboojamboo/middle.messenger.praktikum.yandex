@@ -1,12 +1,22 @@
+import { Block } from '../utils';
 import template from './container/TopPanel.hbs';
 import styles from './styles/styles.module.css';
 
 type TTopPanelProps = {
   title: string;
   subTitle?: string;
-  buttons: () => string;
+  buttons: Block;
+  attr?: {
+    class?: string
+  }
 }
 
-export const TopPanel = ({ title, subTitle, buttons }: TTopPanelProps) => template({
-  styles, title, subTitle, buttons,
-});
+export class TopPanel extends Block<TTopPanelProps> {
+  constructor(props: TTopPanelProps) {
+    super('section', { ...props, attr: { class: styles.container } });
+  }
+
+  render() {
+    return this.compile(template, { ...this.props, styles });
+  }
+}
