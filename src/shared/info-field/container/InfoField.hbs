@@ -1,9 +1,7 @@
-<div class="{{ styles.container }}">
-    <div>{{{ title }}}</div>
+<div>{{{ title }}}</div>
 
-    {{#if isEdit}}
-        <input name="{{ name }}" value="{{ value }}" />
-    {{else}}
-        <div>{{{ value }}}</div>
-    {{/if}}
-</div>
+{{#if isEdit}}
+    <input name="{{ name }}" value="{{ value }}" />
+{{else}}
+    <div>{{{ value }}}</div>
+{{/if}}

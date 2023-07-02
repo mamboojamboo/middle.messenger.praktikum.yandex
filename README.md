@@ -8,6 +8,10 @@
 
 [Re-exporting](https://javascript.info/import-export)
 
+## Used technologies
+
+[Typescript](https://www.typescriptlang.org/), [Handlebars](https://handlebarsjs.com/), [PostCSS](https://postcss.org/),[ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Vite](https://vitejs.dev/)
+
 ## Flow (ROUTS IN APP)
 
 To sign in: login - Tyler, password - Derden<br>
