@@ -1,22 +1,32 @@
 import { Block } from './block';
 import { Stack } from './stack';
 
-export class Router {
+export class Router<T extends Block> {
   #history = new Stack();
 
-  #routes: Record<string, Block> = {};
+  #routes: Record<string, T>;
 
-  #currentPage: null | Block = null;
+  #currentPage: T;
 
-  constructor(routes: Record<string, Block>) {
+  #appContainer: new (props: { page: T }) => T;
+
+  constructor(routes: Record<string, T>, appContainer: new (props: { page: T }) => T) {
     this.#routes = { ...routes };
+    this.#appContainer = appContainer;
+    this.#currentPage = this.#routes.NOT_FOUND;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  init() {
+    console.log('App starting...');
+    return true;
   }
 
   getCurrentRout = () => this.#history.getTailElement();
 
-  setCurrentRout = (rout: string) => {
-    if (this.getCurrentRout() !== rout) {
-      this.#history.push(rout);
+  setCurrentRout = (route: string) => {
+    if (this.getCurrentRout() !== route) {
+      this.#history.push(route);
       this.setCurrentPage(this.getCurrentRout());
     }
   };
@@ -28,7 +38,129 @@ export class Router {
 
   getCurrentPage = () => this.#currentPage;
 
-  setCurrentPage = (rout: string) => {
-    this.#currentPage = this.#routes[rout || 'NOT_FOUND'];
+  setCurrentPage = (route: string) => {
+    this.#currentPage = this.#routes[route || 'NOT_FOUND'];
+
+    const root = document.getElementById('root');
+    if (root) {
+      root.innerHTML = '';
+
+      const appContainerInstance = new this.#appContainer({ page: this.#currentPage });
+
+      if (appContainerInstance) {
+        root.append(appContainerInstance.getContent());
+        appContainerInstance.dispatchComponentDidMount();
+
+        const form = document.querySelector('form');
+        if (form) {
+          form.addEventListener('submit', (event) => {
+            const formTarget = event.target;
+            if (!(formTarget instanceof HTMLFormElement)) {
+              return;
+            }
+
+            const login = formTarget.querySelector('input[name="login"]') as HTMLInputElement;
+            const password = formTarget.querySelector('input[name="password"]') as HTMLInputElement;
+
+            if (login.value === 'Tyler' && password.value === 'Derden') {
+              form.reset();
+              this.setCurrentRout('CHAT');
+            }
+          });
+        }
+
+        // APP ROUTE TESTING
+        const buttons = document.querySelectorAll('[data-route]');
+        if (buttons.length) {
+          buttons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+              if (!(event.target instanceof HTMLButtonElement) || !event.target.dataset.route) {
+                return;
+              }
+              this.setCurrentRout(event.target.dataset.route);
+            });
+          });
+        }
+
+        // APP 500 ROUTE TESTING
+        const serverErrorButton = document.querySelector('#server-error');
+        if (serverErrorButton) {
+          serverErrorButton.addEventListener('click', (event) => {
+            if (!(event.target instanceof HTMLButtonElement) || !event.target.dataset.route) {
+              return;
+            }
+            this.setCurrentRout(event.target.dataset.route);
+          });
+        }
+
+        // GO TO PREVIOUS MAIN ROUTE TESTING
+        const goToPreviousAppButton = document.querySelector('#return');
+        if (goToPreviousAppButton) {
+          goToPreviousAppButton.addEventListener('click', () => {
+            this.setPreviousRout();
+            if (window.location.href !== `${window.location.origin}/`) {
+              window.history.back();
+            }
+          });
+        }
+
+        // DIALOG ROUTE TESTING
+        const dialogButtons = document.querySelectorAll('[data-dialog]');
+        if (dialogButtons) {
+          dialogButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+              const target = event.currentTarget;
+              if (!(target instanceof HTMLDivElement) || !target.dataset.dialog) {
+                return;
+              }
+              this.setCurrentRout(target.dataset.dialog);
+            });
+          });
+        }
+
+        // PROFILE ROUTE TESTING
+        const editButton = document.querySelector('#profile');
+        if (editButton) {
+          editButton.addEventListener('click', (event) => {
+            if (!(event.target instanceof HTMLButtonElement) || !event.target.dataset.main) {
+              return;
+            }
+            this.setCurrentRout(event?.target?.dataset.main);
+          });
+        }
+
+        // GO TO PREVIOUS MAIN ROUTE TESTING
+        const goToPreviousMainButton = document.querySelector(
+          '#go-to-previous-chat-main',
+        );
+        if (goToPreviousMainButton) {
+          goToPreviousMainButton.addEventListener('click', () => {
+            this.setPreviousRout();
+          });
+        }
+
+        // CHANGE DATA ROUTE TESTING
+        const changeDataButton = document.querySelector('#change-data');
+        if (changeDataButton) {
+          changeDataButton.addEventListener('click', (event) => {
+            if (!(event.target instanceof HTMLButtonElement) || !event.target.dataset.main) {
+              return;
+            }
+            this.setCurrentRout(event.target.dataset.main);
+          });
+        }
+
+        // CHANGE PASSWORD ROUTE TESTING
+        const changePasswordButton = document.querySelector('#change-password');
+        if (changePasswordButton) {
+          changePasswordButton.addEventListener('click', (event) => {
+            if (!(event.target instanceof HTMLButtonElement) || !event.target.dataset.main) {
+              return;
+            }
+            this.setCurrentRout(event.target.dataset.main);
+          });
+        }
+      }
+    }
   };
 }

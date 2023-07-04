@@ -46,9 +46,6 @@ export class SignInPage extends Block {
           type: INTL.ROUTE_BUTTON.TYPE,
           'data-route': INTL.ROUTE_BUTTON.ROUTE,
         },
-        events: {
-          click: (event) => console.log(event),
-        },
       }),
     });
 

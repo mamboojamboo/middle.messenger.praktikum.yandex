@@ -1,21 +1,20 @@
-import { NotFoundPage } from '../../not-found-page';
 import { ChatSide } from 'widgets';
-import { ChatMainRouter } from '../chat-main-router';
+import { Block } from 'shared';
 import template from './container/ChatPage.hbs';
 import styles from './styles/styles.module.css';
-import { Block } from 'shared';
 
-export class ChatPage extends Block {
-  constructor() {
-    super('section', { attr: { class: styles.chat__page } });
-  }
+type TChatPageProps = {
+  page?: Block,
+  attr?: { class?: string }
+}
 
-  init() {
-    this.children.side = new ChatSide();
-    this.children.main = ChatMainRouter.getCurrentPage() || new NotFoundPage();
+export class ChatPage extends Block<TChatPageProps> {
+  constructor(props: TChatPageProps) {
+    super('section', { ...props, attr: { class: styles.chat__page } });
   }
 
   render() {
+    this.children.side = new ChatSide();
     return this.compile(template, { styles });
   }
 }
