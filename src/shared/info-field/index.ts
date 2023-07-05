@@ -3,9 +3,11 @@ import template from './container/InfoField.hbs';
 import styles from './styles/styles.module.css';
 
 type TInfoFieldProps = {
-  title: string;
+  header: string;
   name: string;
   value: string;
+  pattern?: string;
+  title?: string;
   isEdit: boolean;
   attr?: {
     class?: string;

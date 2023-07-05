@@ -3,5 +3,3 @@ export { SignUpPage } from './sign-up-page';
 export { ChatPage } from './chat-page';
 export { NotFoundPage } from './not-found-page';
 export { ServerErrorPage } from './server-error-page';
-
-export { ChatMainRouter } from './chat-page';

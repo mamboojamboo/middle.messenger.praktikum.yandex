@@ -6,27 +6,26 @@ import template from './container/ChatSide.hbs';
 import styles from './styles/styles.module.css';
 import { mockData } from './model';
 
-const {
-  userAvetarUrl, userFirstName, userSecondName, userProfession, chatList,
-} = mockData;
-
-const mappedChatList = chatList.map(
-  ({
-    url, firstName, secondName, profession,
-  }) => new Person({
-    url,
-    firstName,
-    secondName,
-    profession,
-  }),
-);
-
 export class ChatSide extends Block {
   constructor() {
     super('section', { attr: { class: styles.side } });
   }
 
   init() {
+    const {
+      userAvetarUrl, userFirstName, userSecondName, userProfession, chatList,
+    } = mockData;
+
+    const mappedChatList = chatList.map(
+      ({
+        url, firstName, secondName, profession,
+      }) => new Person({
+        url,
+        firstName,
+        secondName,
+        profession,
+      }),
+    );
     this.children.user = new Person({
       url: userAvetarUrl,
       firstName: userFirstName,

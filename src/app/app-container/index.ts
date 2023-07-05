@@ -1,19 +1,17 @@
-import { NotFoundPage } from 'pages';
 import { Block } from 'shared';
-import { AppRouter } from '../app-router';
 import template from './container/AppContainer.hbs';
 import './styles/index.css';
 
-export class AppContainer extends Block {
-  constructor() {
-    super('main', {});
-  }
+type TAppContainerProps = {
+  page: Block
+}
 
-  init() {
-    this.children.page = AppRouter.getCurrentPage() || new NotFoundPage();
+export class AppContainer extends Block<TAppContainerProps> {
+  constructor(props: TAppContainerProps) {
+    super('main', props);
   }
 
   render() {
-    return this.compile(template, {});
+    return this.compile(template, this.props);
   }
 }

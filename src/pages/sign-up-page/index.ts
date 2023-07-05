@@ -13,12 +13,17 @@ export class SignUpPage extends Block {
   render() {
     this.children.Form = new Form({
       title: INTL.TITLE,
+      events: {
+        submit: (event) => handleSubmit(event, INTL.SUBMIT_BUTTON.HANDLESUBMIT_TITLE),
+      },
       children: [
         new Input({
           label: INTL.EMAIL.LABLE,
           type: INTL.EMAIL.TYPE,
           name: INTL.EMAIL.NAME,
           placeholder: INTL.EMAIL.PLACEHOLDER,
+          pattern: INTL.EMAIL.PATTERN,
+          title: INTL.EMAIL.TITLE,
           required: true,
         }),
         new Input({
@@ -26,6 +31,8 @@ export class SignUpPage extends Block {
           type: INTL.LOGIN.TYPE,
           name: INTL.LOGIN.NAME,
           placeholder: INTL.LOGIN.PLACEHOLDER,
+          pattern: INTL.LOGIN.PATTERN,
+          title: INTL.LOGIN.TITLE,
           required: true,
         }),
         new Input({
@@ -33,6 +40,8 @@ export class SignUpPage extends Block {
           type: INTL.FIRST_NAME.TYPE,
           name: INTL.FIRST_NAME.NAME,
           placeholder: INTL.FIRST_NAME.PLACEHOLDER,
+          pattern: INTL.FIRST_NAME.PATTERN,
+          title: INTL.FIRST_NAME.TITLE,
           required: true,
         }),
         new Input({
@@ -40,6 +49,8 @@ export class SignUpPage extends Block {
           type: INTL.SECOND_NAME.TYPE,
           name: INTL.SECOND_NAME.NAME,
           placeholder: INTL.SECOND_NAME.PLACEHOLDER,
+          pattern: INTL.SECOND_NAME.PATTERN,
+          title: INTL.SECOND_NAME.TITLE,
           required: true,
         }),
         new Input({
@@ -47,6 +58,8 @@ export class SignUpPage extends Block {
           type: INTL.PHONE_NUMBER.TYPE,
           name: INTL.PHONE_NUMBER.NAME,
           placeholder: INTL.PHONE_NUMBER.PLACEHOLDER,
+          pattern: INTL.PHONE_NUMBER.PATTERN,
+          title: INTL.PHONE_NUMBER.TITLE,
           required: true,
         }),
         new Input({
@@ -54,6 +67,8 @@ export class SignUpPage extends Block {
           type: INTL.PASSWORD.TYPE,
           name: INTL.PASSWORD.NAME,
           placeholder: INTL.PASSWORD.PLACEHOLDER,
+          pattern: INTL.PASSWORD.PATTERN,
+          title: INTL.PASSWORD.TITLE,
           required: true,
         }),
         new Input({
@@ -61,6 +76,8 @@ export class SignUpPage extends Block {
           type: INTL.REPEAT_PASSWORD.TYPE,
           name: INTL.REPEAT_PASSWORD.NAME,
           placeholder: INTL.REPEAT_PASSWORD.PLACEHOLDER,
+          pattern: INTL.REPEAT_PASSWORD.PATTERN,
+          title: INTL.REPEAT_PASSWORD.TITLE,
           required: true,
         }),
       ],
@@ -69,9 +86,6 @@ export class SignUpPage extends Block {
         attr: {
           class: styles.signup__submit,
           type: INTL.SUBMIT_BUTTON.TYPE,
-        },
-        events: {
-          click: (event: MouseEvent) => handleSubmit(event, INTL.SUBMIT_BUTTON.HANDLESUBMIT_TITLE),
         },
       }),
       RouteButton: new RouteButton({

@@ -4,10 +4,14 @@ import styles from './styles/styles.module.css';
 
 type TFormProps = {
   title: string;
+  name?: string;
   styles?: string;
   children: Block[];
   SubmitButton: Block;
-  RouteButton: Block;
+  RouteButton?: Block;
+  events?: {
+    submit?: (event: PointerEvent) => void
+  }
 }
 
 export class Form extends Block<TFormProps> {

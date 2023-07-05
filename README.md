@@ -14,7 +14,7 @@
 
 ## Flow (ROUTS IN APP)
 
-To sign in: login - Tyler, password - Derden<br>
+To sign in: login - Tyler, password - Derden123<br>
 Sign up: click 'Sign in' in sign up form<br>
 Sign up: click 'Sign up' in sign in form<br>
 Profile: click settings icon<br>

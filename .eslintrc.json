@@ -39,7 +39,8 @@
         "off",
         { "target": "single"}
     ],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "no-useless-escape": "off"
   },
   "settings": {
     "import/resolver": {
