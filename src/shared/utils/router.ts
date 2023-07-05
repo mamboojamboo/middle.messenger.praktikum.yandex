@@ -19,6 +19,7 @@ export class Router<T extends Block> {
   // eslint-disable-next-line class-methods-use-this
   init() {
     console.log('App starting...');
+    this.setCurrentRout('SIGN_IN');
     return true;
   }
 
@@ -52,17 +53,28 @@ export class Router<T extends Block> {
         appContainerInstance.dispatchComponentDidMount();
 
         const form = document.querySelector('form');
-        if (form) {
+        if (form && form.name === 'Sign in') {
           form.addEventListener('submit', (event) => {
             const formTarget = event.target;
+
             if (!(formTarget instanceof HTMLFormElement)) {
               return;
             }
 
+            const formElements = formTarget ? Array.from(formTarget.elements) : [];
+            const result = formElements.reduce<Record <string, string>>((acc, cur) => {
+              if (cur instanceof HTMLInputElement) {
+                acc[cur.name] = cur.value;
+              }
+              return acc;
+            }, {});
+
+            console.log('SignIn Form', result);
+
             const login = formTarget.querySelector('input[name="login"]') as HTMLInputElement;
             const password = formTarget.querySelector('input[name="password"]') as HTMLInputElement;
 
-            if (login.value === 'Tyler' && password.value === 'Derden') {
+            if (login.value === 'Tyler' && password.value === 'Derden123') {
               form.reset();
               this.setCurrentRout('CHAT');
             }

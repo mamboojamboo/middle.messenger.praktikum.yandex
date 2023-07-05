@@ -29,11 +29,6 @@ const routes = {
 };
 
 const AppRouter = new Router(routes, AppContainer);
-AppRouter.setCurrentRout(APP_ROUTES.SIGN_IN);
-
-if (window.location.href !== `${window.location.origin}/`) {
-  AppRouter.setCurrentRout(APP_ROUTES.NOT_FOUND);
-}
 
 const handleChangeRout = (event: MouseEvent) => {
   if (!(event.target instanceof HTMLButtonElement)) {

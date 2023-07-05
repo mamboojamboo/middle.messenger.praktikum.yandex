@@ -1,5 +1,5 @@
 import {
-  Input, Button, RouteButton, Form, Block, handleSubmit,
+  Input, Button, RouteButton, Form, Block,
 } from 'shared';
 import { INTL } from './constants';
 import template from './container/SignIn.hbs';
@@ -10,15 +10,18 @@ export class SignInPage extends Block {
     super('div', { attr: { class: styles.signin } });
   }
 
-  render() {
+  init() {
     this.children.Form = new Form({
       title: INTL.TITLE,
+      name: INTL.TITLE,
       children: [
         new Input({
           label: INTL.LOGIN.LABLE,
           type: INTL.LOGIN.TYPE,
           name: INTL.LOGIN.NAME,
           placeholder: INTL.LOGIN.PLACEHOLDER,
+          pattern: INTL.LOGIN.PATTERN,
+          title: INTL.LOGIN.TITLE,
           required: true,
         }),
         new Input({
@@ -26,6 +29,8 @@ export class SignInPage extends Block {
           type: INTL.PASSWORD.TYPE,
           name: INTL.PASSWORD.NAME,
           placeholder: INTL.PASSWORD.PLACEHOLDER,
+          pattern: INTL.PASSWORD.PATTERN,
+          title: INTL.PASSWORD.TITLE,
           required: true,
         }),
       ],
@@ -34,9 +39,6 @@ export class SignInPage extends Block {
         attr: {
           class: styles.signin__submit,
           type: INTL.SUBMIT_BUTTON.TYPE,
-        },
-        events: {
-          click: (event: MouseEvent) => handleSubmit(event, INTL.SUBMIT_BUTTON.HANDLESUBMIT_TITLE),
         },
       }),
       RouteButton: new RouteButton({
@@ -48,7 +50,9 @@ export class SignInPage extends Block {
         },
       }),
     });
+  }
 
+  render() {
     return this.compile(template, this.props);
   }
 }
