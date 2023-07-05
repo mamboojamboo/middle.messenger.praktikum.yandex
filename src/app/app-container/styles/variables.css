@@ -1,7 +1,7 @@
 :root {
 	--blueColor: #041c32;
 	--pinkColor: #b0335b;
-	--whiteColor: #ffffff;
+	--whiteColor: #fff;
 	--snowColor: #e5e5e5;
 	--greyColor: #a0a0a0;
 	--lightGreenColor: #16c79a;
@@ -11,4 +11,5 @@
 	--textSizeM: 1.25rem;
 	--textSizeS: 1rem;
 	--textSizeXS: 0.875rem;
+	--textSizeXXS: 0.750rem;
 }

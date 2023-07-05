@@ -18,7 +18,7 @@
 	color: var(--blueColor);
 }
 
-.signin_submit:hover {
+.signin__submit:hover {
 	background-color: var(--lightGreenColor);
 }
 

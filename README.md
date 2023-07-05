@@ -8,9 +8,13 @@
 
 [Re-exporting](https://javascript.info/import-export)
 
+## Used technologies
+
+[Typescript](https://www.typescriptlang.org/), [Handlebars](https://handlebarsjs.com/), [PostCSS](https://postcss.org/),[ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), [Vite](https://vitejs.dev/)
+
 ## Flow (ROUTS IN APP)
 
-To sign in: login - Tyler, password - Derden<br>
+To sign in: login - Tyler, password - Derden123<br>
 Sign up: click 'Sign in' in sign up form<br>
 Sign up: click 'Sign up' in sign in form<br>
 Profile: click settings icon<br>

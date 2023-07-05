@@ -1,18 +1,16 @@
-<section class="{{ styles.side }}">
-	<h1 class="{{ styles.side__title }}">{{ title }}</h1>
+<h1 class="{{ styles.side__title }}">{{ title }}</h1>
 
-	<div class="{{ styles.side__usercard }}">
-		{{{ User }}}
-		{{{ EditUserProfile }}}
-	</div>
+<div class="{{ styles.side__usercard }}">
+	{{{ user }}}
+	{{{ editUserProfile }}}
+</div>
 
-	{{{ SearchDialog }}}
+{{{ searchDialog }}}
 
-	<div class="{{ styles.side__chatlist }}">
-		{{#each chatList}}
-			<div data-dialog="DIALOG">
-				{{{ this }}}
-			</div>
-		{{/each}}
-	</div>
-</section>
+<div class="{{ styles.side__chatlist }}">
+	{{#each chatList}}
+		<div data-dialog="CHAT_DIALOG">
+			{{{ this }}}
+		</div>
+	{{/each}}
+</div>

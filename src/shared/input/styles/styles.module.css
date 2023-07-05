@@ -9,3 +9,9 @@
 	border: none;
 	border-bottom: 0.063rem solid var(--greyColor);
 }
+
+.input__warning {
+	color: var(--pinkColor);
+	font-size: var(--textSizeXXS);
+	height: var(--textSizeXXS);
+}

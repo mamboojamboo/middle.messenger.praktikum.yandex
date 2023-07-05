@@ -1,4 +1,4 @@
-<form class="{{ styles.container }}">
+<form class="{{ styles.user-info }}">
     <div>
         {{{ email }}}
         {{{ login }}}
@@ -11,23 +11,23 @@
 
     {{#if isEdit}}
         <div>
-            <button class="{{ styles.save_button }}" type="submit" disabled>Save</button>
+            {{{ submitButton }}}
         </div>
     {{else}}
-        <div class="{{ styles.buttons_container}}">
+        <div class="{{ styles.user-info__buttons-container}}">
             <button
                 id="change-data"
-                class="{{ styles.button }}"
+                class="{{ styles.user-info__button }}"
                 type="button"
-                data-main="CHANGE_DATA"
+                data-main="CHAT_CHANGE_DATA"
             >
                 Change personal data
             </button>
             <button
                 id="change-password"
-                class="{{ styles.button }}"
+                class="{{ styles.user-info__button }}"
                 type="button"
-                data-main="CHANGE_PASSWORD"
+                data-main="CHAT_CHANGE_PASSWORD"
             >
                 Change password
             </button>

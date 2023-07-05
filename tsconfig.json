@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "target": "ESNext",
+        "module": "commonjs",
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "app": ["./src/app"],
+            "pages": ["./src/pages"],
+            "widgets": ["./src/widgets"],
+            "features": ["./src/features"],
+            "entities":  ["./src/entities"],
+            "shared": ["./src/shared"],
+            "img": ["./static/assets/img/index.ts"]
+      }
+    },
+    "exclude": ["node_modules"]
+}

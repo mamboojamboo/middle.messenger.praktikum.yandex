@@ -1,4 +1,4 @@
-@import '../../../app/app-container/styles/variables.css';
+@import url('../../../app/app-container/styles/variables.css');
 
 .error {
 	width: 100vw;
